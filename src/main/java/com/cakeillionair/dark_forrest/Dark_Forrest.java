@@ -1,5 +1,6 @@
 package com.cakeillionair.dark_forrest;
 
+import com.cakeillionair.dark_forrest.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,6 +22,8 @@ public class Dark_Forrest
 
     public Dark_Forrest() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
