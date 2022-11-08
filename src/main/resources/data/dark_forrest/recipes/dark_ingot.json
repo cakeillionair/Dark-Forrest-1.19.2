@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "dark_forrest:molten_netherite"
+  },
+  "base": {
+    "item": "dark_forrest:molten_darkness"
+  },
+  "result": {
+    "item": "dark_forrest:dark_ingot"
+  }
+}

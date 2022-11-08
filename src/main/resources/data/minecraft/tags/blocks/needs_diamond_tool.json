@@ -1,0 +1,8 @@
+{
+  "replace": "false",
+  "values": [
+    "dark_forrest:block_of_darkness",
+    "dark_forrest:dark_ore",
+    "dark_forrest:deepslate_dark_ore"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dark_forrest:block_of_darkness"
+    }
+  ],
+  "result": {
+    "item": "dark_forrest:dark_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 6,
+  "group": "molten_netherite",
+  "ingredient": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": "dark_forrest:molten_netherite"
+}
