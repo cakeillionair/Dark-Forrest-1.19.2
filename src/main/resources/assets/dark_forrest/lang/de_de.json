@@ -1,6 +1,12 @@
 {
   "item.dark_forrest.darkwood_stick": "Dunkelholz Stock",
   "item.dark_forrest.raw_darkness": "Rohe Dunkelheit",
+  "item.dark_forrest.molten_darkness": "Geschmolzene Dunkelheit",
+  "item.dark_forrest.dark_ingot": "Dunkler Barren",
+
+  "block.dark_forrest.block_of_darkness": "Dunkelheit-Block",
+  "block.dark_forrest.dark_ore": "Dunkles Erz",
+  "block.dark_forrest.deepslate_dark_ore": "Tiefenschiefer-Dunkles Erz",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

@@ -16,6 +16,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
     public static final RegistryObject<Item> RAW_DARKNESS = ITEMS.register("raw_darkness",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<Item> MOLTEN_DARKNESS = ITEMS.register("molten_darkness",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<Item> DARK_INGOT = ITEMS.register("dark_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
