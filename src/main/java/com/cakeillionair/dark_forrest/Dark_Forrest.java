@@ -22,7 +22,6 @@ public class Dark_Forrest
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Dark_Forrest() {
-        //Test von David
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
