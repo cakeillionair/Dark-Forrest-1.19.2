@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#z#",
+    "#y#",
+    "#x#"
+  ],
+  "key": {
+    "x": {
+      "item": "dark_forrest:darkwood_stick"
+    },
+    "y": {
+      "item": "minecraft:lightning_rod"
+    },
+    "z": {
+      "block": "dark_forrest:coated_copper"
+    }
+  },
+  "result": {
+    "item": "dark_forrest:hammer"
+  }
+}

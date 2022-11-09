@@ -1,6 +1,7 @@
 package com.cakeillionair.dark_forrest.item;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
+import com.cakeillionair.dark_forrest.item.custom.HammerItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +25,12 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
     public static final RegistryObject<Item> MOLTEN_COPPER = ITEMS.register("molten_copper",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<Item> COATED_COPPER = ITEMS.register("coated_copper",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<Item> UNPROCESSED_DARKWOOD_STICK = ITEMS.register("unprocessed_darkwood_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<HammerItem> HAMMER = ITEMS.register("hammer",
+            () -> new HammerItem(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

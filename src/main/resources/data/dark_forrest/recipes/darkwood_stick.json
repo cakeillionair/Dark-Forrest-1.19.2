@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "dark_forrest:dark_ingot"
+  },
+  "base": {
+    "item": "dark_forrest:unprocessed_darkwood_stick"
+  },
+  "result": {
+    "item": "dark_forrest:darkwood_stick"
+  }
+}
