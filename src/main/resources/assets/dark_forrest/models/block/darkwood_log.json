@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dark_forrest:block/darkwood_log_top",
+    "side": "dark_forrest:block/darkwood_log"
+  }
+}

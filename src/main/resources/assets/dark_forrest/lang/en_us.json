@@ -13,6 +13,8 @@
   "block.dark_forrest.dark_ore": "Dark Ore",
   "block.dark_forrest.poison_moss": "Poison Moss",
   "block.dark_forrest.deepslate_dark_ore": "Deepslate Dark Ore",
+  "block.dark_forrest.darkwood_leaves": "Darkwood Leaves",
+  "block.dark_forrest.darkwood_log": "Darkwood Log",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

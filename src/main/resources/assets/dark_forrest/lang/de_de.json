@@ -13,6 +13,8 @@
   "block.dark_forrest.dark_ore": "Dunkles Erz",
   "block.dark_forrest.poison_moss": "Giftiges Moos",
   "block.dark_forrest.deepslate_dark_ore": "Tiefenschiefer-Dunkles Erz",
+  "block.dark_forrest.darkwood_leaves": "Dunkelholzlaub",
+  "block.dark_forrest.darkwood_log": "Dunkelholzstamm",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

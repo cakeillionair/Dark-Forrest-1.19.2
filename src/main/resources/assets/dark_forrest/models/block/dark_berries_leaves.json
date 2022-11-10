@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dark_forrest:block/dark_berries_leaves"
+  }
+}

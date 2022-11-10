@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "berries=false": { "model": "dark_forrest:block/darkwood_leaves"},
+    "berries=true": { "model": "dark_forrest:block/dark_berries_leaves"}
+  }
+}
