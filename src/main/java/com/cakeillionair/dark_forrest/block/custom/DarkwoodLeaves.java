@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class DarkwoodLeaves extends Block {
     public static final BooleanProperty BERRIES = BooleanProperty.create("berries");
@@ -19,7 +20,7 @@ public class DarkwoodLeaves extends Block {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult blockHitResult) {
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             level.setBlock(blockPos, state.cycle(BERRIES), 3);
         }

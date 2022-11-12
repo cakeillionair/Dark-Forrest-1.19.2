@@ -2,7 +2,6 @@ package com.cakeillionair.dark_forrest.item;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.item.custom.HammerItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
