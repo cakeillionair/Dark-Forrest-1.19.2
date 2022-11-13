@@ -34,6 +34,11 @@ public class ModItems {
     public static final RegistryObject<HammerItem> HAMMER = ITEMS.register("hammer",
             () -> new HammerItem(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
 
+    public static class Tiers {
+        //TODO : REPLACE
+        //public static final Tier EXAMPLE = new ForgeTier(2,800,1.5f,3,350, null, () -> Ingredient.of(Items.ACACIA_BOAT));
+    }
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
