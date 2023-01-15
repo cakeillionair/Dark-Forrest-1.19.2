@@ -5,8 +5,7 @@
     "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:fixed",
-      "_comment": "TODO : CHANGE BIOME",
-      "biome": "minecraft:plains"
+      "biome": "dark_forrest:df_biome"
     }
   }
 }
