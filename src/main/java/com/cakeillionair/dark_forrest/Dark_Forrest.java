@@ -2,6 +2,7 @@ package com.cakeillionair.dark_forrest;
 
 import com.cakeillionair.dark_forrest.block.ModBlocks;
 import com.cakeillionair.dark_forrest.item.ModItems;
+import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,6 +27,8 @@ public class Dark_Forrest
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModDimensions.register();
 
         modEventBus.addListener(this::commonSetup);
 

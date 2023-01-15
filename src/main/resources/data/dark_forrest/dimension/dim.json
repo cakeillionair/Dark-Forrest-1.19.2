@@ -1,0 +1,12 @@
+{
+  "type": "dark_forrest:dim",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "_comment": "TODO : CHANGE BIOME",
+      "biome": "minecraft:plains"
+    }
+  }
+}
