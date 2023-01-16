@@ -2,7 +2,7 @@
   "type": "dark_forrest:dim",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:overworld",
+    "settings": "dark_forrest:df_noise",
     "biome_source": {
       "type": "minecraft:fixed",
       "biome": "dark_forrest:df_biome"
