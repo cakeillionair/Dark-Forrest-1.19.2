@@ -1,6 +1,7 @@
 package com.cakeillionair.dark_forrest.item;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
+import com.cakeillionair.dark_forrest.item.custom.CatalystItem;
 import com.cakeillionair.dark_forrest.item.custom.HammerItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -33,6 +34,7 @@ public class ModItems {
     //custom
     public static final RegistryObject<HammerItem> HAMMER = ITEMS.register("hammer",
             () -> new HammerItem(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
+    public static final RegistryObject<Item> CATALYST = ITEMS.register("catalyst", CatalystItem::new);
 
     public static class Tiers {
         //TODO : REPLACE

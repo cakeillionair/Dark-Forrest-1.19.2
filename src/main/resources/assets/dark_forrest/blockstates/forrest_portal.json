@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=z": { "model": "dark_forrest:block/forrest_portal_ew"},
+    "axis=x": { "model": "dark_forrest:block/forrest_portal_ns"}
+  }
+}

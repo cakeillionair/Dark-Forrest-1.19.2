@@ -29,7 +29,9 @@ displayName="Dark Forrest" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks to my brother for helping" #optional
+credits="""Thanks to my brother for helping
+ModTeleporter, CatalystItem, DFPortalBlock largely from https://github.com/quek04/The-Undergarden
+Under MIT-License: https://github.com/quek04/The-Undergarden/blob/1.18/LICENSE""" #optional
 # A text field displayed in the mod UI
 authors="Cakeillionair" #optional
 # Display Test controls the display for your mod in the server connection screen

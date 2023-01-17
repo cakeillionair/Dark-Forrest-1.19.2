@@ -1,6 +1,7 @@
 package com.cakeillionair.dark_forrest.block;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
+import com.cakeillionair.dark_forrest.block.custom.DFPortalBlock;
 import com.cakeillionair.dark_forrest.block.custom.DarkwoodLeaves;
 import com.cakeillionair.dark_forrest.block.custom.PoisonMossBlock;
 import com.cakeillionair.dark_forrest.item.ModCreativeModeTab;
@@ -57,6 +58,13 @@ public class ModBlocks {
                     .strength(0.1f)
                     .sound(SoundType.AZALEA_LEAVES)),
             ModCreativeModeTab.DARK_FORREST);
+
+    public static final RegistryObject<Block> FORREST_PORTAL = registerBlockWithoutBlockItem("forrest_portal",
+            DFPortalBlock::new);
+
+    public static <T extends Block>RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block){
+        return BLOCKS.register(name, block);
+    }
 
     public static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
