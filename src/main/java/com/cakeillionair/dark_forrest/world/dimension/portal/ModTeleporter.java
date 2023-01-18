@@ -74,6 +74,7 @@ public class ModTeleporter implements ITeleporter {
                     blockpos$mutable1.setY(l);
                     if (this.level.isEmptyBlock(blockpos$mutable1)) {
                         int i1;
+                        //noinspection StatementWithEmptyBody
                         for(i1 = l; l > 0 && this.level.isEmptyBlock(blockpos$mutable1.move(Direction.DOWN)); --l) {
                         }
 

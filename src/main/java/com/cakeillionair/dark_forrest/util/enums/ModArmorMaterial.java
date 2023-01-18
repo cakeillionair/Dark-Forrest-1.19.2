@@ -4,6 +4,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -23,6 +24,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
     private final float toughness;
     private final Supplier<Ingredient> repairMaterial;
     private final float knockbackResistance;
+    @SuppressWarnings("unused")
     ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial, float knockbackResistance) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
@@ -32,7 +34,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
         this.toughness = toughness;
         this.repairMaterial = repairMaterial;
         this.knockbackResistance = knockbackResistance;
-    };
+    }
 
     @Override
     public int getDurabilityForSlot(EquipmentSlot p_40410_) {
@@ -50,17 +52,17 @@ public enum ModArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public SoundEvent getEquipSound() {
+    public @NotNull SoundEvent getEquipSound() {
         return this.soundEvent;
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return this.repairMaterial.get();
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 

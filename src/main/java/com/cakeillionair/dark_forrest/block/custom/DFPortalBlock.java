@@ -6,6 +6,7 @@ import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
 import com.cakeillionair.dark_forrest.world.dimension.portal.ModTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -32,9 +33,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.Cancelable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
+@SuppressWarnings("deprecation")
 public class DFPortalBlock extends Block {
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     protected static final VoxelShape X_AABB = Block.box(0.0D, 0.0D, 6.0D, 16.0D, 16.0D, 10.0D);
@@ -51,7 +54,7 @@ public class DFPortalBlock extends Block {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter worldIn, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         switch(state.getValue(AXIS)) {
             case Z:
                 return Z_AABB;
@@ -84,6 +87,7 @@ public class DFPortalBlock extends Block {
             this.size = size;
         }
 
+        @SuppressWarnings("unused")
         public DFPortalBlock.Size getPortalSize()
         {
             return size;
@@ -102,7 +106,7 @@ public class DFPortalBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public @NotNull BlockState updateShape(BlockState stateIn, Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor worldIn, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
         Direction.Axis direction$axis = facing.getAxis();
         Direction.Axis direction$axis1 = stateIn.getValue(AXIS);
         boolean flag = direction$axis1 != direction$axis && direction$axis.isHorizontal();
@@ -111,7 +115,7 @@ public class DFPortalBlock extends Block {
     }
 
     @Override
-    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entity) {
+    public void entityInside(@NotNull BlockState state, @NotNull Level worldIn, @NotNull BlockPos pos, Entity entity) {
         if(!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
             if(entity.isOnPortalCooldown()) {
                 entity.setPortalCooldown();
@@ -121,6 +125,7 @@ public class DFPortalBlock extends Block {
                     entity.portalEntrancePos = pos.immutable();
                 }
                 Level entityWorld = entity.level;
+                //noinspection ConstantValue
                 if(entityWorld != null) {
                     MinecraftServer minecraftserver = entityWorld.getServer();
                     ResourceKey<Level> destination = entity.level.dimension() == ModDimensions.DIM_KEY
@@ -141,7 +146,7 @@ public class DFPortalBlock extends Block {
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, RandomSource rand) {
+    public void animateTick(@NotNull BlockState stateIn, @NotNull Level worldIn, @NotNull BlockPos pos, RandomSource rand) {
         if (rand.nextInt(100) == 0) {
             worldIn.playLocalSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D,
                     (double)pos.getZ() + 0.5D, SoundEvents.PORTAL_AMBIENT,
@@ -163,19 +168,17 @@ public class DFPortalBlock extends Block {
                 z = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
                 zSpeed = rand.nextFloat() * 2.0F * (float)j;
             }
-
-            // TODO: Particles
-            // worldIn.addParticle(PARTICLE_TYPE, x, y, z, xSpeed, ySpeed, zSpeed);
+            worldIn.addParticle(ParticleTypes.PORTAL, x, y, z, xSpeed, ySpeed, zSpeed);
         }
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter worldIn, BlockPos pos, BlockState state) {
+    public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter worldIn, @NotNull BlockPos pos, @NotNull BlockState state) {
         return ItemStack.EMPTY;
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
+    public @NotNull BlockState rotate(@NotNull BlockState state, Rotation rot) {
         switch(rot) {
             case COUNTERCLOCKWISE_90:
             case CLOCKWISE_90:
@@ -219,6 +222,7 @@ public class DFPortalBlock extends Block {
                 this.rightDir = Direction.SOUTH;
             }
 
+            //noinspection StatementWithEmptyBody
             for(BlockPos blockpos = pos; pos.getY() > blockpos.getY() - 21 && pos.getY() > 0 && this.canConnect(level.getBlockState(pos.below())); pos = pos.below()) {
             }
 
@@ -252,10 +256,12 @@ public class DFPortalBlock extends Block {
             return this.level.getBlockState(framePos).is(ModTags.Blocks.PORTAL_FRAME_BLOCKS) ? i : 0;
         }
 
+        @SuppressWarnings("unused")
         public int getHeight() {
             return this.height;
         }
 
+        @SuppressWarnings("unused")
         public int getWidth() {
             return this.width;
         }
@@ -264,6 +270,7 @@ public class DFPortalBlock extends Block {
             label56:
             for(this.height = 0; this.height < 21; ++this.height) {
                 for(int i = 0; i < this.width; ++i) {
+                    //noinspection DataFlowIssue
                     BlockPos blockpos = this.bottomLeft.relative(this.rightDir, i).above(this.height);
                     BlockState blockstate = this.level.getBlockState(blockpos);
                     if (!this.canConnect(blockstate)) {
@@ -318,6 +325,7 @@ public class DFPortalBlock extends Block {
 
         public void placePortalBlocks() {
             for(int i = 0; i < this.width; ++i) {
+                //noinspection DataFlowIssue
                 BlockPos blockpos = this.bottomLeft.relative(this.rightDir, i);
 
                 for(int j = 0; j < this.height; ++j) {

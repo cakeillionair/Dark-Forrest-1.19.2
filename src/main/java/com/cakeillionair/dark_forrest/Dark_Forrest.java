@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
+@SuppressWarnings("unused")
 @Mod(Dark_Forrest.MOD_ID)
 public class Dark_Forrest
 {
@@ -38,13 +39,14 @@ public class Dark_Forrest
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(@SuppressWarnings("unused") final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+        @SuppressWarnings("EmptyMethod")
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 

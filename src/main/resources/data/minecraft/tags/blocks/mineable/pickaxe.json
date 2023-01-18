@@ -1,5 +1,5 @@
 {
-  "replace": "false",
+  "replace": false,
   "values": [
     "dark_forrest:dark_ore",
     "dark_forrest:deepslate_dark_ore",

@@ -10,6 +10,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 public class ModDimensions {
     public static final ResourceKey<Level> DIM_KEY = ResourceKey.create(Registry.DIMENSION_REGISTRY,
             new ResourceLocation(Dark_Forrest.MOD_ID, "dim"));
+    @SuppressWarnings("unused")
     public static final ResourceKey<DimensionType> DIM_TYPE = ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, DIM_KEY.registry());
 
     public static void register(){

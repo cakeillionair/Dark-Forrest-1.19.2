@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecation")
 public class DarkwoodLeaves extends Block {
     public static final BooleanProperty BERRIES = BooleanProperty.create("berries");
 
