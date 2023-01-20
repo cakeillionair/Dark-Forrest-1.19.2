@@ -1,5 +1,16 @@
 {
   "variants": {
-    "": { "model": "dark_forrest:block/darkwood_log"}
+    "axis=x": {
+      "model": "dark_forrest:block/darkwood_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "dark_forrest:block/darkwood_log"
+    },
+    "axis=z": {
+      "model": "dark_forrest:block/darkwood_log_horizontal",
+      "x": 90
+    }
   }
 }

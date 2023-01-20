@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dark_forrest:darkwood_log",
+    "dark_forrest:darkwood_wood",
+    "dark_forrest:stripped_darkwood_log",
+    "dark_forrest:stripped_darkwood_wood"
+  ]
+}
