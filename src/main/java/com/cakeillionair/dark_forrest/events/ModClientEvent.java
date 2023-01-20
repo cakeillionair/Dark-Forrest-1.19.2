@@ -1,8 +1,10 @@
 package com.cakeillionair.dark_forrest.events;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
+import com.cakeillionair.dark_forrest.effect.DimensionDarkness;
 import com.cakeillionair.dark_forrest.item.ModItems;
 import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,7 +28,10 @@ public class ModClientEvent {
     public static void portalTravel(PlayerEvent.PlayerChangedDimensionEvent e){
         if(e.getEntity().isLocalPlayer()) {
             if (e.getTo() == ModDimensions.DIM_KEY) {
-                //TODO: DIMENSION DARKER SOMEHOW?
+                e.getEntity().addEffect(new MobEffectInstance(DimensionDarkness.DARKNESS.get(),999999));
+            }
+            if (e.getFrom() == ModDimensions.DIM_KEY){
+                e.getEntity().removeEffect(DimensionDarkness.DARKNESS.get());
             }
         }
     }

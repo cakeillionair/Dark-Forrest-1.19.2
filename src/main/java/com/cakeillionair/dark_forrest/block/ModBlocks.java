@@ -139,6 +139,9 @@ public class ModBlocks {
                         serverLevel.removeBlock(pos, false);
                     }
                     serverLevel.setBlock(pos, state.setValue(STAGE, state.getValue(STAGE)+1), 3);
+                    if(serverLevel.getBlockState(pos).getValue(STAGE)==5){
+                        serverLevel.setBlock(pos, state.setValue(STAGE, 0).setValue(BERRIES,Boolean.TRUE), 3);
+                    }
                 }
             }, ModCreativeModeTab.DARK_FORREST);
 
