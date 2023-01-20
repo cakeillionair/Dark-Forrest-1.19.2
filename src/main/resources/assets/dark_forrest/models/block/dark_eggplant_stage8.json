@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dark_forrest:block/dark_eggplant_stage6"
+  }
+}

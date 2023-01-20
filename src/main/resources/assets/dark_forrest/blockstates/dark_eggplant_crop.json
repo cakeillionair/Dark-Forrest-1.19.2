@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "age=0": {"model": "dark_forrest:block/dark_eggplant_stage0"},
+    "age=1": {"model": "dark_forrest:block/dark_eggplant_stage1"},
+    "age=2": {"model": "dark_forrest:block/dark_eggplant_stage2"},
+    "age=3": {"model": "dark_forrest:block/dark_eggplant_stage3"},
+    "age=4": {"model": "dark_forrest:block/dark_eggplant_stage4"},
+    "age=5": {"model": "dark_forrest:block/dark_eggplant_stage5"},
+    "age=6": {"model": "dark_forrest:block/dark_eggplant_stage6"},
+    "age=7": {"model": "dark_forrest:block/dark_eggplant_stage7"},
+    "age=8": {"model": "dark_forrest:block/dark_eggplant_stage8"}
+  }
+}

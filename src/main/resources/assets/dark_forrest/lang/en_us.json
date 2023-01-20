@@ -10,6 +10,8 @@
   "item.dark_forrest.hammer": "Hammer",
   "item.dark_forrest.catalyst": "Catalyst",
   "item.dark_forrest.dark_berries": "Dark Berry",
+  "item.dark_forrest.dark_eggplant": "Dark Eggplant",
+  "item.dark_forrest.dark_eggplant_seeds": "Dark Eggplant Seeds",
 
   "block.dark_forrest.block_of_darkness": "Block of Darkness",
   "block.dark_forrest.dark_ore": "Dark Ore",
@@ -22,6 +24,7 @@
   "block.dark_forrest.stripped_darkwood_wood": "Stripped Darkwood",
   "block.dark_forrest.darkwood_planks": "Darkwood Planks",
   "block.dark_forrest.darkwood_sapling": "Darkwood Sapling",
+  "block.dark_forrest.dark_eggplant_crop": "Dark Eggplant Crop",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

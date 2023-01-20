@@ -8,6 +8,8 @@ import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
 import com.cakeillionair.dark_forrest.world.feature.ModConfiguredFeatures;
 import com.cakeillionair.dark_forrest.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -57,7 +59,7 @@ public class Dark_Forrest
         @SuppressWarnings("EmptyMethod")
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DARK_EGGPLANT_CROP.get(), RenderType.cutout());
         }
     }
 }

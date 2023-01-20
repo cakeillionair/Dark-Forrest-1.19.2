@@ -10,6 +10,8 @@
   "item.dark_forrest.hammer": "Hammer",
   "item.dark_forrest.catalyst": "Katalysator",
   "item.dark_forrest.dark_berries": "Dunkelbeere",
+  "item.dark_forrest.dark_eggplant": "Dunkelaubergine",
+  "item.dark_forrest.dark_eggplant_seeds": "Dunkelauberginensamen",
 
   "block.dark_forrest.block_of_darkness": "Dunkelheit-Block",
   "block.dark_forrest.dark_ore": "Dunkles Erz",
@@ -22,6 +24,7 @@
   "block.dark_forrest.stripped_darkwood_wood": "Entrindetes Dunkelholz",
   "block.dark_forrest.darkwood_planks": "Dunkelholzbretter",
   "block.dark_forrest.darkwood_sapling": "Dunkelholzsetzling",
+  "block.dark_forrest.dark_eggplant_crop": "Dunkelauberginenpflanze",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }
