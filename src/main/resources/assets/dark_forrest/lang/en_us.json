@@ -8,6 +8,8 @@
   "item.dark_forrest.coated_copper": "Coated Copper",
   "item.dark_forrest.unprocessed_darkwood_stick": "Unprocessed Darkwood Stick",
   "item.dark_forrest.hammer": "Hammer",
+  "item.dark_forrest.catalyst": "Catalyst",
+  "item.dark_forrest.dark_berries": "Dark Berry",
 
   "block.dark_forrest.block_of_darkness": "Block of Darkness",
   "block.dark_forrest.dark_ore": "Dark Ore",
@@ -15,6 +17,11 @@
   "block.dark_forrest.deepslate_dark_ore": "Deepslate Dark Ore",
   "block.dark_forrest.darkwood_leaves": "Darkwood Leaves",
   "block.dark_forrest.darkwood_log": "Darkwood Log",
+  "block.dark_forrest.darkwood_wood": "Darkwood",
+  "block.dark_forrest.stripped_darkwood_log": "Stripped Darkwood Log",
+  "block.dark_forrest.stripped_darkwood_wood": "Stripped Darkwood",
+  "block.dark_forrest.darkwood_planks": "Darkwood Planks",
+  "block.dark_forrest.darkwood_sapling": "Darkwood Sapling",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

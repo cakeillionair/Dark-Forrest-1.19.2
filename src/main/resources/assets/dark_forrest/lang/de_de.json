@@ -8,6 +8,8 @@
   "item.dark_forrest.coated_copper": "Beschichtetes Kupfer",
   "item.dark_forrest.unprocessed_darkwood_stick": "Unbearbeiteter Dunkelholz Stock",
   "item.dark_forrest.hammer": "Hammer",
+  "item.dark_forrest.catalyst": "Katalysator",
+  "item.dark_forrest.dark_berries": "Dunkelbeere",
 
   "block.dark_forrest.block_of_darkness": "Dunkelheit-Block",
   "block.dark_forrest.dark_ore": "Dunkles Erz",
@@ -15,6 +17,11 @@
   "block.dark_forrest.deepslate_dark_ore": "Tiefenschiefer-Dunkles Erz",
   "block.dark_forrest.darkwood_leaves": "Dunkelholzlaub",
   "block.dark_forrest.darkwood_log": "Dunkelholzstamm",
+  "block.dark_forrest.darkwood_wood": "Dunkelholz",
+  "block.dark_forrest.stripped_darkwood_log": "Entrindeter Dunkelholzstamm",
+  "block.dark_forrest.stripped_darkwood_wood": "Entrindetes Dunkelholz",
+  "block.dark_forrest.darkwood_planks": "Dunkelholzbretter",
+  "block.dark_forrest.darkwood_sapling": "Dunkelholzsetzling",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }

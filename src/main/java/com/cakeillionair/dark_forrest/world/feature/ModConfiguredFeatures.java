@@ -10,8 +10,12 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,9 +32,9 @@ public class ModConfiguredFeatures {
                     //TODO : FIX UGLY AS F***
                     new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                             BlockStateProvider.simple(ModBlocks.DARKWOOD_LOG.get()),
-                            new StraightTrunkPlacer(5,6,3),
+                            new ForkingTrunkPlacer(10,2,2),
                             BlockStateProvider.simple(ModBlocks.DARKWOOD_LEAVES.get()),
-                            new BlobFoliagePlacer(ConstantInt.of(2),ConstantInt.of(0),4),
+                            new AcaciaFoliagePlacer(ConstantInt.of(2),ConstantInt.of(0)),
                             new TwoLayersFeatureSize(1,0,2)).build()));
 
     public static final RegistryObject<ConfiguredFeature<?,?>> DARKWOOD_SPAWN =
