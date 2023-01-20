@@ -3,6 +3,9 @@ package com.cakeillionair.dark_forrest.item;
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.item.custom.CatalystItem;
 import com.cakeillionair.dark_forrest.item.custom.HammerItem;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -35,6 +38,9 @@ public class ModItems {
     public static final RegistryObject<HammerItem> HAMMER = ITEMS.register("hammer",
             () -> new HammerItem(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
     public static final RegistryObject<Item> CATALYST = ITEMS.register("catalyst", CatalystItem::new);
+    public static final RegistryObject<Item> DARK_BERRIES = ITEMS.register("dark_berries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)
+                    .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, 600), 1f).build())));
 
     public static class Tiers {
         //TODO : REPLACE

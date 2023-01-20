@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -109,8 +110,7 @@ public class ModBlocks {
                 public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult blockHitResult) {
                     if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && state.getValue(BERRIES)) {
                         level.setBlock(blockPos, state.cycle(BERRIES), 3);
-                        //TODO : ITEM
-                        //popResource(level, blockPos, new ItemStack(ModItems.DARKWOOD_BERRIES, 1));
+                        popResource(level, blockPos, new ItemStack(ModItems.DARK_BERRIES.get(), 1));
                     }
 
                     return super.use(state, level, blockPos, player, hand, blockHitResult);
