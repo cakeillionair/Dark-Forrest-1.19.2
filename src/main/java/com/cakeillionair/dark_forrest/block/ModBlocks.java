@@ -9,6 +9,8 @@ import com.cakeillionair.dark_forrest.item.ModItems;
 import com.cakeillionair.dark_forrest.world.feature.tree.DarkwoodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -17,6 +19,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -24,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -90,6 +94,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARKWOOD_LEAVES = registerBlock("darkwood_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.AZALEA_LEAVES)){
                 public static final BooleanProperty BERRIES = BooleanProperty.create("berries");
+                public static final IntegerProperty STAGE = IntegerProperty.create("stage",0,5);
 
                 @Override
                 public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -106,9 +111,10 @@ public class ModBlocks {
                     return 60;
                 }
 
+                @SuppressWarnings("deprecation")
                 @Override
                 public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult blockHitResult) {
-                    if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && state.getValue(BERRIES)) {
+                    if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && state.getValue(BERRIES) && (player.getMainHandItem().is(ModItems.DARK_BERRIES.get()) || player.getMainHandItem().isEmpty())) {
                         level.setBlock(blockPos, state.cycle(BERRIES), 3);
                         popResource(level, blockPos, new ItemStack(ModItems.DARK_BERRIES.get(), 1));
                     }
@@ -116,8 +122,23 @@ public class ModBlocks {
                     return super.use(state, level, blockPos, player, hand, blockHitResult);
                 }
                 @Override
-                protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-                    builder.add(BERRIES,DISTANCE, PERSISTENT, WATERLOGGED);
+                protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+                    builder.add(BERRIES,DISTANCE, PERSISTENT, WATERLOGGED,STAGE);
+                }
+
+                @Override
+                public BlockState getStateForPlacement(@NotNull BlockPlaceContext p_54424_) {
+                    this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, 7).setValue(PERSISTENT, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE).setValue(BERRIES, RandomSource.create().nextIntBetweenInclusive(1,10)==1).setValue(STAGE,RandomSource.create().nextIntBetweenInclusive(0,2)));
+                    return super.getStateForPlacement(p_54424_);
+                }
+
+                @Override
+                public void randomTick(@NotNull BlockState state, @NotNull ServerLevel serverLevel, @NotNull BlockPos pos, @NotNull RandomSource randomSource) {
+                    if (this.decaying(state)) {
+                        dropResources(state, serverLevel, pos);
+                        serverLevel.removeBlock(pos, false);
+                    }
+                    serverLevel.setBlock(pos, state.setValue(STAGE, state.getValue(STAGE)+1), 3);
                 }
             }, ModCreativeModeTab.DARK_FORREST);
 
@@ -144,6 +165,7 @@ public class ModBlocks {
         registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
+    @SuppressWarnings("UnusedReturnValue")
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
