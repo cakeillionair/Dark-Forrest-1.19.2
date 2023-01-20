@@ -128,7 +128,7 @@ public class ModBlocks {
 
                 @Override
                 public BlockState getStateForPlacement(@NotNull BlockPlaceContext p_54424_) {
-                    this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, 7).setValue(PERSISTENT, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE).setValue(BERRIES, RandomSource.create().nextIntBetweenInclusive(1,10)==1).setValue(STAGE,RandomSource.create().nextIntBetweenInclusive(0,2)));
+                    this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, 7).setValue(PERSISTENT, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE).setValue(BERRIES, Boolean.FALSE).setValue(STAGE,RandomSource.create().nextIntBetweenInclusive(0,2)));
                     return super.getStateForPlacement(p_54424_);
                 }
 
