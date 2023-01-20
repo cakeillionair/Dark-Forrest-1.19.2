@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "dark_forrest:darkwood_sapling"
+    "cross": "dark_forrest:block/darkwood_sapling"
   },
   "render_type": "cutout"
 }
