@@ -107,15 +107,17 @@ public class ModBlocks {
 
                 @Override
                 public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult blockHitResult) {
-                    if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
+                    if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && state.getValue(BERRIES)) {
                         level.setBlock(blockPos, state.cycle(BERRIES), 3);
+                        //TODO : ITEM
+                        //popResource(level, blockPos, new ItemStack(ModItems.DARKWOOD_BERRIES, 1));
                     }
 
                     return super.use(state, level, blockPos, player, hand, blockHitResult);
                 }
                 @Override
-                protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54447_) {
-                    p_54447_.add(BERRIES,DISTANCE, PERSISTENT, WATERLOGGED);
+                protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+                    builder.add(BERRIES,DISTANCE, PERSISTENT, WATERLOGGED);
                 }
             }, ModCreativeModeTab.DARK_FORREST);
 
