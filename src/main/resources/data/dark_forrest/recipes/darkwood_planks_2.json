@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dark_forrest:stripped_darkwood_log"
+    }
+  ],
+  "result": {
+    "item": "dark_forrest:darkwood_planks",
+    "count": 4
+  }
+}
