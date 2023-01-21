@@ -119,7 +119,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "minecraft:grass_block",
+            "Name": "dark_forrest:dark_grass_block",
             "Properties": {
               "snowy": "false"
             }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_top",
+  "textures": {
+    "top": "dark_forrest:block/dark_grass_block_top",
+    "side": "dark_forrest:block/dark_grass_block_side"
+  }
+}
