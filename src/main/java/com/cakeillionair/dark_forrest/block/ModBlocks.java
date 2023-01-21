@@ -147,7 +147,15 @@ public class ModBlocks {
             }, ModCreativeModeTab.DARK_FORREST);
 
     public static final RegistryObject<Block> DARKWOOD_SAPLING = registerBlock("darkwood_sapling",
-            () -> new SaplingBlock(new DarkwoodTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)),ModCreativeModeTab.DARK_FORREST);
+            () -> new SaplingBlock(new DarkwoodTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)){
+                @Override
+                public void randomTick(BlockState p_222011_, ServerLevel p_222012_, BlockPos p_222013_, RandomSource p_222014_) {
+                    if (!p_222012_.isAreaLoaded(p_222013_, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+                    if (p_222014_.nextInt(7) == 0) {
+                        this.advanceTree(p_222012_, p_222013_, p_222011_, p_222014_);
+                    }
+                }
+            },ModCreativeModeTab.DARK_FORREST);
     ///////////////////////////
     //// DARKWOOD TREE END ////
     ///////////////////////////
