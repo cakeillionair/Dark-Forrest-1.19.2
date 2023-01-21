@@ -2,7 +2,6 @@ package com.cakeillionair.dark_forrest.world.feature;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.block.ModBlocks;
-import com.cakeillionair.dark_forrest.world.feature.tree.ModPlacementModifiers;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -27,8 +26,12 @@ public class ModPlacedFeatures {
                     .add(PlacementUtils.countExtra(3,0.1f,2))
                     .add(InSquarePlacement.spread())
                     .add(SurfaceWaterDepthFilter.forMaxDepth(0))
+                    //////////////////////////////////////////////////////////////////////////////
+                    //// THIS IS A WARNING FOR THE FUTURE: DON'T MAKE CUSTOM THINGS LIKE THIS ////
+                    //////////////////////////////////////////////////////////////////////////////
                     //.add(HeightRangePlacement.of(UniformHeight.of(VerticalAnchor.BOTTOM,VerticalAnchor.TOP)))
-                    .add(ModPlacementModifiers.PLACEMENT_MODIFIER)
+                    //.add(ModPlacementModifiers.PLACEMENT_MODIFIER)
+                    .add(CountOnEveryLayerPlacement.of(1))
                     .add(BiomeFilter.biome()).build()));
 
     public static void register(IEventBus eventBus) {

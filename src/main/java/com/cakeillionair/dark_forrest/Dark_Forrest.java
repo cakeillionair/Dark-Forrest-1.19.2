@@ -7,7 +7,6 @@ import com.cakeillionair.dark_forrest.villager.ModPOIs;
 import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
 import com.cakeillionair.dark_forrest.world.feature.ModConfiguredFeatures;
 import com.cakeillionair.dark_forrest.world.feature.ModPlacedFeatures;
-import com.cakeillionair.dark_forrest.world.feature.tree.ModPlacementModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -58,7 +57,7 @@ public class Dark_Forrest
         @SuppressWarnings("EmptyMethod")
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ModPlacementModifiers.register();
+            //For client registries
         }
     }
 }
