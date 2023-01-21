@@ -25,7 +25,7 @@
   "block.dark_forrest.darkwood_planks": "Dunkelholzbretter",
   "block.dark_forrest.darkwood_sapling": "Dunkelholzsetzling",
   "block.dark_forrest.dark_eggplant_crop": "Dunkelauberginenpflanze",
-  "block.dark_forrest.dark_grass": "Dunkelgraß",
+  "block.dark_forrest.dark_grass_block": "Dunkelgrasblock",
 
   "itemGroup.dark_forrest": "Dark Forrest"
 }
