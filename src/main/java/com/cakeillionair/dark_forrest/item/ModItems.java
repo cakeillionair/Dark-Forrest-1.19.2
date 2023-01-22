@@ -2,6 +2,7 @@ package com.cakeillionair.dark_forrest.item;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.block.ModBlocks;
+import com.cakeillionair.dark_forrest.entity.ModEntityTypes;
 import com.cakeillionair.dark_forrest.item.custom.CatalystItem;
 import com.cakeillionair.dark_forrest.item.custom.HammerItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,6 +11,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -42,6 +44,9 @@ public class ModItems {
     public static final RegistryObject<Item> DARK_EGGPLANT = ITEMS.register("dark_eggplant",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(1.2f).build())));
+    public static final RegistryObject<Item> DARK_WHALE_SPAWN_EGG = ITEMS.register("dark_whale_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DARK_WHALE, 0x46085c, 0x00eaff,
+                    new Item.Properties().tab(ModCreativeModeTab.DARK_FORREST)));
 
     //custom
     public static final RegistryObject<HammerItem> HAMMER = ITEMS.register("hammer",

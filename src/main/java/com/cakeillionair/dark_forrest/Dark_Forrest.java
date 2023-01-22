@@ -1,13 +1,16 @@
 package com.cakeillionair.dark_forrest;
 
 import com.cakeillionair.dark_forrest.block.ModBlocks;
+import com.cakeillionair.dark_forrest.client.DarkWhaleRenderer;
 import com.cakeillionair.dark_forrest.effect.ModEffects;
+import com.cakeillionair.dark_forrest.entity.ModEntityTypes;
 import com.cakeillionair.dark_forrest.item.ModItems;
 import com.cakeillionair.dark_forrest.villager.ModPOIs;
 import com.cakeillionair.dark_forrest.world.dimension.ModDimensions;
 import com.cakeillionair.dark_forrest.world.feature.ModConfiguredFeatures;
 import com.cakeillionair.dark_forrest.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 @SuppressWarnings("unused")
 @Mod(Dark_Forrest.MOD_ID)
@@ -42,6 +46,10 @@ public class Dark_Forrest
 
         ModEffects.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
+
+        GeckoLib.initialize();
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -58,6 +66,7 @@ public class Dark_Forrest
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             //For client registries
+            EntityRenderers.register(ModEntityTypes.DARK_WHALE.get(), DarkWhaleRenderer::new);
         }
     }
 }
