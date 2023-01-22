@@ -165,9 +165,9 @@ public class ModBlocks {
                     Material.MOSS).strength(0.1f).sound(SoundType.MUD)),
             ModCreativeModeTab.DARK_FORREST);
     public static final RegistryObject<Block> DARK_GRASS = registerBlock("dark_grass_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).lightLevel((idk)->{return 4;})),ModCreativeModeTab.DARK_FORREST);
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).lightLevel((idk)->{return 6;})),ModCreativeModeTab.DARK_FORREST);
     public static final RegistryObject<Block> DARK_DIRT = registerBlock("dark_dirt_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).lightLevel((idk)->{return 4;})),ModCreativeModeTab.DARK_FORREST);
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).lightLevel((idk)->{return 6;})),ModCreativeModeTab.DARK_FORREST);
 
     public static final RegistryObject<DarkEggplantCropBlock> DARK_EGGPLANT_CROP = BLOCKS.register(
             "dark_eggplant_crop", () -> new DarkEggplantCropBlock(BlockBehaviour

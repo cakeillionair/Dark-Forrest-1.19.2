@@ -3,7 +3,6 @@ package com.cakeillionair.dark_forrest.client;
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.entity.custom.DarkWhaleEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class DarkWhaleModel extends AnimatedGeoModel<DarkWhaleEntity> {
@@ -19,6 +18,6 @@ public class DarkWhaleModel extends AnimatedGeoModel<DarkWhaleEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(DarkWhaleEntity animatable) {
-        return new ResourceLocation(Dark_Forrest.MOD_ID, "animations/dark_whale.animation,json");
+        return new ResourceLocation(Dark_Forrest.MOD_ID, "animations/dark_whale.animation.json");
     }
 }
