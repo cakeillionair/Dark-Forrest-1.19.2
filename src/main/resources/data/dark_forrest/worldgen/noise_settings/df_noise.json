@@ -5,7 +5,7 @@
   "ore_veins_enabled": true,
   "legacy_random_source": false,
   "default_block": {
-    "Name": "minecraft:stone"
+    "Name": "dark_forrest:dark_dirt_block"
   },
   "default_fluid": {
     "Name": "minecraft:water",
