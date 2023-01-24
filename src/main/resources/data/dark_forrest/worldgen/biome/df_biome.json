@@ -22,6 +22,9 @@
   "spawn_costs": {},
   "carvers": {},
   "features": [
-    ["dark_forrest:darkwood_placed"]
+    [
+      "dark_forrest:darkwood_placed",
+      "dark_forrest:dark_ore_placed"
+    ]
   ]
 }
