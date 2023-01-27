@@ -2,6 +2,9 @@ package com.cakeillionair.dark_forrest.events;
 
 import com.cakeillionair.dark_forrest.Dark_Forrest;
 import com.cakeillionair.dark_forrest.util.KeyBinding;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -14,13 +17,12 @@ public class KeyBindEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key e){
             if(KeyBinding.WARP_KEY.consumeClick()){
-                /* TODO WTF FIX
                 LocalPlayer p = Minecraft.getInstance().player;
+                assert p != null;
                 Vec3 l = p.getLookAngle().normalize();
                 Vec3 pos = p.getPosition(1);
                 pos.add(l.multiply(5,5,5));
-                p.teleportTo(pos.x,pos.y,pos.z);
-                */
+                p.knockback(pos.x,pos.y,pos.z);
             }
         }
     }
