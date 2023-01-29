@@ -21,8 +21,8 @@ public class KeyBindEvents {
                 assert p != null;
                 Vec3 l = p.getLookAngle().normalize();
                 Vec3 pos = p.getPosition(1);
-                pos.add(l.multiply(5,5,5));
-                p.knockback(pos.x,pos.y,pos.z);
+                pos.add(l.multiply(10,10,10));
+                p.knockback(-pos.x,-pos.y,-pos.z);
             }
         }
     }
